@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gongcha</title>
+    <link href="css/main.css" rel="stylesheet" />
+    
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!-- aos css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- jquery js -->
+    <!-- cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <!-- Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+     <!-- aos js -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(function(){
+            //header
+            //scroll
+            var hdTop = $('header') .offset().top;
+            $(window).scroll(function(){
+                console.log(hdTop);
+                var windowTop = $(window).scrollTop();
+                console.log(windowTop);
+                if(hdTop < windowTop) {
+                    $('header').addClass('on');
+                } else {
+                    $('header').removeClass('on');
+                }
+            });
+
+            //.main_visaul
+            var swiper = new Swiper(".main_v", {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+
+            //.cont02
+            var swiper = new Swiper(".cont2", {
+                spaceBetween: 30,
+                pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+            });
+
+            //.cont04 tap_menu
+            $('.tap_menu li').click(function(){
+                var moveLeft = $(this).position().left;
+                $('.bar').css({
+                    'left' : moveLeft,
+                    'transition' : '0.5s'
+                });
+
+                $('.tap_menu li').removeClass('on');
+                $(this).addClass('on');
+
+                $('.item').removeClass('on');
+                $('.item').eq($(this).index()).addClass('on');
+            })
+        })// jqurey end
+    </script>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>
+                <a href="#">
+                    <img src="img/logo.png" alt="로고" />
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#">브랜드</a></li>
+                    <li><a href="#">메뉴</a></li>
+                    <li><a href="#">매장</a></li>
+                    <li><a href="#">멤버십</a></li>
+                    <li><a href="#">제휴서비스</a></li>
+                    <li><a href="#">이벤트·뉴스</a></li>
+                </ul>
+            </nav>
+            <ul class="right_menu">
+                <li><a href="#"><img src="img/facebook.png" alt="페이스북" /></a></li>
+                <li><a href="#"><img src="img/instagram.png" alt="인스타그램" /></a></li>
+                <li><a href="#"><img src="img/kakaotalk.png" alt="카카오톡" /></a></li>
+            </ul><!-- .right_menu end -->
+        </div>
+    </header>
+    <section class="main_visual">
+         <!-- Swiper -->
+        <div class="swiper main_v">
+            <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/main1.jpg" alt="제주신메뉴" /></div><!-- 1 -->
+            <div class="swiper-slide"><img src="img/main2.jpg" alt="스페셜커피신메뉴" /></div><!-- 2 -->
+            <div class="swiper-slide"><img src="img/main3.jpg" alt="조선향미신메뉴" /></div><!-- 3 -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section><!-- .main_visual end -->
+    <section class="cont01">
+        <div>
+            <div class="youtube_wrap">
+                <div class="youtube">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7rleYGZKNsY?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div><!-- .youtube end -->
+            </div><!-- .youtube_wrap end -->
+            <div class="info">
+                <h3>공차, 골든펄에 빠지다!</h3>
+                <p>펄하나에 달콤함과, 펄하나에 쫀득함<br>저 하늘의 골든펄 다 따다줄게</p>
+                <p class="hashtag">#공차 #골든펄 #골든펄에빠지다 #공차골든펄<br>#펄하나의달콤함 #펄하나의쫀득함 #같이마실래</p>
+                <div class="btn">
+                    <a href="#">공차 공식유튜브</a>
+                    <a href="#">메뉴 보러가기 ></a>
+                </div><!-- .btn end -->
+            </div><!-- .info end -->
+        </div>
+    </section><!-- .cont01 end -->
+    <section class="cont02">
+        <div class="title">
+            <h3><span>BEST</span> COMBINATION</h3>
+            <p>공차가 제안하는 가장 맛있는 조합</p>
+        </div><!-- .title end -->
+        <div class="btn">
+            <a href="#">더 보기 ></a>
+        </div><!-- .btn end -->
+         <!-- Swiper -->
+        <div class="swiper cont2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/best1.jpg" alt="블랙밀크티+펄" /></div><!-- 1 -->
+                <div class="swiper-slide"><img src="img/best2.jpg" alt="제주그린밀크티+펄" /></div><!-- 2 -->
+                <div class="swiper-slide"><img src="img/best3.jpg" alt="망고요구르트+펄" /></div><!-- 3 -->
+            </div>
+            <div class="swiper-pagination"></div>
+      </div>
+    </section><!-- .cont02 end -->
+    <section class="cont03">
+        <div class="title">
+            <h3>HOW TO <span>ORDER</span></h3>
+            <div>
+                <p>공차는 취향에 맞게 토핑, 당도, 얼음량까지 맞춤주문 가능합니다.</p>
+                <a href="#">자세히 보기 ></a>
+            </div>
+        </div><!-- .title end -->
+        <div class="list01">
+            <div class="box" data-aos="fade-left"
+            data-aos-offset="100"
+            data-aos-easing="ease-in-sine">
+                <h4>STEP1</h4>
+                <strong>TEA MENU</strong>
+                <p>취향에 맞게 공차의 음료를 고르세요.</p>
+                <img class="img01" src="img/cont03_tea.png" alt="티 메뉴" />
+            </div><!-- .box end 1 -->
+            <div class="box" data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-easing="ease-in-sine">
+                <h4>STEP2</h4>
+                <strong>TOPPINGS</strong>
+                <p>6가지 토핑 중 원하는 토핑을 선택하세요.<br>(최대 3가지 선택 가능)</p>
+                <img class="img02" src="img/cont03_toppings.png" alt="토핑" />
+            </div><!-- .box end 2 -->
+            <div class="box" data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+                <h4>STEP3</h4>
+                <strong>SWEET & ICE GRADE</strong>
+                <p>당도와 얼음량을 원하시는 만큼 조절하세요.</p>
+                <div class="swi">
+                    <p><span>SWEET</span> 당도</p>
+                    <img src="img/cont03_sweet.png" alt="당도" />
+                </div><!-- .sweet end -->
+                <div class="swi">
+                    <p><span>ICE</span> 얼음량</p>
+                    <img src="img/cont03_ice.png" alt="얼음량" />
+                </div><!-- .ice end -->
+            </div><!-- .box end 3 -->
+        </div><!-- .list01 end -->
+    </section><!-- .cont03 end -->
+    <section class="cont04">
+        <div class="title">
+            <h3><span>TEA</span> RECIPE</h3>
+            <p>공차만의 티 레시피</p>
+        </div><!-- .title end -->
+        <div class="tap_menu">
+            <ul>
+                <li class="on">오리지널 티</li>
+                <li>밀크티</li>
+                <li>과일믹스</li>
+            </ul>
+            <div class="bar">
+                <span>메뉴막대바</span>
+            </div><!-- .bar end -->
+        </div><!-- .tap_menu end -->
+        <div class="list02">
+            <div class="item on">
+                <img src="img/cont04_01.png" alt="오리지널 티" />
+                <div>
+                    <h4>Original Tea 오리지널 티</h4>
+                    <p>티백이나 가루가 아닌 황실에 바치던 잎차만 골라<br>1도 1초도 어기지 않고 차마다 다른
+                        <br>황금률로 우려 한 잔 한 잔 부드러움을 더해 만듭니다.</p>
+                    <a href="#">메뉴 보러가기 ></a>
+                </div>
+            </div><!-- .item end 1 -->
+            <div class="item">
+                <img src="img/cont04_02.png" alt="밀크티" />
+                <div>
+                    <h4>Milk Tea 밀크티</h4>
+                    <p>최적의 자연이 키워낸 입차만 골라<br>각 차종에 맞는 황금률로 우려
+                        담백한 우유와 허니,<br>카라멜 등 새로운 맛을 더해 만듭니다.</p>
+                    <a href="#">메뉴 보러가기 ></a>
+                </div>
+            </div><!-- .item end 2 -->
+            <div class="item">
+                <img src="img/cont04_03.png" alt="과일믹스" />
+                <div>
+                    <h4>Fruit Mix 과일믹스</h4>
+                    <p>찻잎의 푸름을 간직한 녹차만 골라
+                        <br>최적의 온도 89℃로 우려
+                        <br>달콤상큼한 과일을 더해 만듭니다.</p>
+                    <a href="#">메뉴 보러가기 ></a>
+                </div>
+            </div><!-- .item end 3-->
+        </div><!-- .list02 end -->
+    </section><!-- .cont04 end -->
+    <section class="cont05">
+        <img src="img/cont05_img.jpg" alt="배달서비스" />
+    </section><!-- .cont05 end -->
+    <section class="cont06">
+        <div class="left">
+            <h3>NEW<br>OPEN</h3>
+            <strong>오픈 매장 안내</strong>
+            <p>새로 오픈한 공차 매장 정보를 확인해보세요!</p>
+            <div>
+                <p class="go">오픈 매장</p>
+                <a href="#">go</a>
+            </div>
+        </div><!-- .left end -->
+        <div class="right">
+            <h3>매장 검색</h3>
+            <p>공차 매장을 쉽고 빠르게 찾아보세요.</p>
+            <div class="serch">
+                <input type="text" placeholder="매장명 또는 주소를 입력하세요.">
+            </div><!-- .serch end -->
+            <a href="#">매장 검색하기</a>
+        </div><!-- .right end -->
+    </section><!-- .cont06 end -->
+    <section class="cont07">
+        <div class="title">
+            <h3>공차 가맹점 개설 문의</h3>
+            <strong>02-3276-9583</strong>
+            <p>세계인의 사랑을 받는 공차, 함께 할 성공 파트너를 모십니다.</p>
+        </div><!-- .title end -->
+        <div class="btn">
+                <a href="#">개설 안내</a>
+                <a href="#">FAQ</a>
+        </div><!-- .btn end -->
+    </section><!-- .cont07 end -->
+    <footer>
+        <div class="ft_menu">
+            <h1><img src="img/ft_logo.png" alt="로고" /></h1>
+            <div class="adress">
+                <strong>㈜공차코리아</strong>
+                <p>대표이사 이봉진</p>
+                <p>서울 종로구 종로 47(공평동, 7층)</p>
+                <p>사업자등록번호 214-88-84534</p>
+                <p>통신판매번호: 2020-서울종로-0966</p>
+            </div><!-- .ft_adress end -->
+            <div class="cs">
+                <strong><a href="#">고객센터</a></strong>
+                <p><a href="tel:02-779-7758">TEL.<span> 02-779-7758</span></a></p>
+                <p>운영시간 09:30 - 17:30</p>
+                <p>점심시간 12:00 - 13:00</p>
+                <p>주말 및 공휴일 휴무</p>
+            </div><!-- .cs end -->
+            <div class="ft_info">
+                <strong>Info</strong>
+                <ul>
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">HOT LINE</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이메일무단수집거부</a></li>
+                </ul>
+            </div><!-- .ft_info end -->
+            <div class="contact">
+                <strong>Contact Us</strong>
+                <ul>
+                    <li><a href="#">제휴 / 제안</a></li>
+                </ul>
+            </div><!-- .contact end-->
+        </div><!-- .ft_menu end -->
+        <div class="copy">
+            <p>(C)GONGCHA KOREA CO.,LTD ALL RIGHTS RESERVED.</p>
+        </div><!-- .copy end -->
+    </footer>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
