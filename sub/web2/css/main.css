@@ -442,7 +442,7 @@ header > div .right_menu li {
 }
 
 .cont04 .bar {
-    width: 33%;
+    width: 34%;
     height: 100%;
     border-radius: 40px;
     background-color: #09913a;
@@ -571,6 +571,7 @@ header > div .right_menu li {
 }
 
 .cont06 .left div p {
+    font-size: 16px;
     margin-right: 25px;
 }
 
