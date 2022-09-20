@@ -1,14 +1,11 @@
 @charset "utf-8";
-@font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url(https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 a {
     text-decoration: none;
@@ -28,18 +25,34 @@ body {
     width: 1440px;
     margin: 0 auto;
 }
-section .title {
+
+section .title > p {
     margin-bottom: 40px;
-}
-section .title h3 {
-    font-size: 50px;
-}
-section .title p {
     font-size: 20px;
+}
+section .title > h3 {
+    font-size: 50px;
+    margin-bottom: 15px;
 }
 
 /* header */
-header {}
+header {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+header.on {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: #eee;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
 header .inner {
     height: 100px;
     display: flex;
@@ -63,7 +76,7 @@ header .inner nav  ul li a{
 
 /* .main_visual */
 .main_visual {
-    height: calc(100vh - 100px);
+    height: 100vh;
     position: relative;
 }
 .main_visual img {
@@ -89,15 +102,93 @@ header .inner nav  ul li a{
     font-size: 70px;
 }
 
-/* .cont01 영상편집 */
+/* .cont01 나의 소개 */
 .cont01 {
+    padding: 200px 0;
+}
+.cont01 .inner {
+    display: flex;
+    justify-content: space-between;
+}
+.cont01 .left {
+    width: 30%;
+}
+.cont01 .left .info .pic {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 50px;
+}
+.cont01 .left .info .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont01 .left .info .name strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.cont01 .left .info .me {
+    margin-top: 20px;
+}
+.cont01 .left .info .me p {
+    margin-bottom: 10px;
+}
+.cont01 .left .info .me span {
+    display: inline-block;
+    width: 100px;
+    margin-right: 20px;
+}
+.cont01 .middle {
+    width: 30%;
+    padding-top: 125px;
+}
+
+.cont01 .middle .education {
+    margin-bottom: 40px;
+}
+.cont01 li strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.cont01 .middle .hashtag {
+    margin-top: 40px;
+}
+.cont01 .right {
+    width: 30%;
+    padding-top: 125px;
+    display: flex;
+}
+.cont01 .right div {
+    padding-top: 28px;
+    margin-left: 40px;
+}
+
+.cont01 .right .skills li {
+    margin-bottom: 7px;
+}
+
+.cont01 .right .sk_line li {
+    width: 200px;
+    height: 12px;
+    margin-bottom: 11px;
+    background-color: #ccc;
+    text-indent: -9999px;
+}
+
+
+
+/* .cont02 영상편집 */
+.cont02 {
     padding: 200px;
 
 }
-.cont01 .motion_menu {
+.cont02 .motion_menu {
     display: inline-block;
 }
-.cont01 .motion_menu  ul {
+.cont02 .motion_menu  ul {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -105,12 +196,12 @@ header .inner nav  ul li a{
     height: 40px;
     border-radius: 40px;
 }
-.cont01 .motion_menu  ul  li {
+.cont02 .motion_menu  ul  li {
     padding: 0 30px;
     font-size: 14px;
     cursor: pointer;
 }
-.cont01 .motion_menu  ul  li.on {
+.cont02 .motion_menu  ul  li.on {
     background-color: #000;
     color: #fff;
     height: 100%;
@@ -118,37 +209,37 @@ header .inner nav  ul li a{
     border-radius: 40px;
 }
 
-.cont01 .mySwiper {
+.cont02 .mySwiper {
     display: none;
 }
-.cont01 .mySwiper.on {
+.cont02 .mySwiper.on {
     display: block;
 }
 
-.cont01 .mySwiper .item {
+.cont02 .mySwiper .item {
     display: flex;
     justify-content: space-between;
 }
-.cont01 .mySwiper .item .pc_youtube {
+.cont02 .mySwiper .item .pc_youtube {
     position: relative;
     width: 55%;
 }
-.cont01 .mySwiper .item .pc_youtube img {
+.cont02 .mySwiper .item .pc_youtube img {
     height: auto;
 }
-.cont01 .mySwiper .item .pc_youtube .youtube {
+.cont02 .mySwiper .item .pc_youtube .youtube {
     position: absolute;
     top: 23px;
     left: 26px;
     width: 94%;
 
 }
-.cont01 .mySwiper .item .pc_youtube .youtube > div {
+.cont02 .mySwiper .item .pc_youtube .youtube > div {
     width: 100%;
     padding-bottom: 56.25%;
     position: relative;
 }
-.cont01 .mySwiper .item .pc_youtube .youtube > div iframe {
+.cont02 .mySwiper .item .pc_youtube .youtube > div iframe {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -156,19 +247,19 @@ header .inner nav  ul li a{
     left: 0;
 }
 
-.cont01 .mySwiper .item .info {
+.cont02 .mySwiper .item .info {
     width: 45%;
     text-align: left;
     padding-left: 50px;
 }
-.cont01 .mySwiper .item .info > strong {
+.cont02 .mySwiper .item .info > strong {
     display: block;
     margin: 1px 0 20px;
 }
-.cont01 .mySwiper .item .info h4 {
+.cont02 .mySwiper .item .info h4 {
     font-size: 34px;
 }
-.cont01 .mySwiper .item .info p {
+.cont02 .mySwiper .item .info p {
     font-size: 20px;
     border-top: 1px solid #ccc;
     margin-top: 20px;
@@ -176,17 +267,17 @@ header .inner nav  ul li a{
     line-height: 1.4;
 }
 
-.cont01 .mySwiper .item .info .text {
+.cont02 .mySwiper .item .info .text {
     margin: 20px 0 30px;
 }
-.cont01 .mySwiper .item .info .text {}
-.cont01 .mySwiper .item .info .text li {}
-.cont01 .mySwiper .item .info .text li strong{}
+.cont02 .mySwiper .item .info .text {}
+.cont02 .mySwiper .item .info .text li {}
+.cont02 .mySwiper .item .info .text li strong{}
 
-.cont01 .mySwiper .item .info .btn {
+.cont02 .mySwiper .item .info .btn {
     display: flex;
 }
-.cont01 .mySwiper .item .info .btn li {
+.cont02 .mySwiper .item .info .btn li {
     height: 40px;
     line-height: 40px;
     border-radius: 40px;
@@ -194,14 +285,14 @@ header .inner nav  ul li a{
     color: #fff;
     margin-right: 10px;
 }
-.cont01 .mySwiper .item .info .btn > li:hover {
+.cont02 .mySwiper .item .info .btn > li:hover {
     background-color: rgb(116, 116, 116);
     color: #fff;
 }
-.cont01 .mySwiper .item .info .btn li a {
+.cont02 .mySwiper .item .info .btn li a {
     padding: 0 25px;
 }
-.cont01 .mySwiper .item .info .btn li:nth-of-type(2) {
+.cont02 .mySwiper .item .info .btn li:nth-of-type(2) {
     background-color: #fff;
     color: #333;
     border: 1px solid #ccc;
@@ -262,6 +353,7 @@ header .inner nav  ul li a{
     position: relative;
     overflow: hidden;
     margin: 0 10px;
+    border-radius: 40px;
 }
 .cont03 .list .item:hover::before {
     position: absolute;
@@ -333,7 +425,8 @@ header .inner nav  ul li a{
 
 /* .cont04 그래픽디자인 */
 .cont04 {
-    background-color: #333;
+    height: 100vh;
+    background-color: skyblue;
     color: #fff;
     padding: 200px 0;
 }
@@ -343,80 +436,54 @@ header .inner nav  ul li a{
 
 .cont04 .list {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 .cont04 .list a {
     width: 19%;
+    border-radius: 40px;
 }
-.cont04 .list a img {
+.cont04 .list a > div {
+    overflow: hidden;
+    position: relative;
+}
+.cont04 .list a > div .zoom {
     width: 100%;
-    height: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: 1s;
+}
+.cont04 .list a > div:hover .zoom {
+    opacity: 1;
+}
+.cont04 .list a > div img {
+    width: 100%;
+    height: 350px;
     object-fit: cover;
     display: block;
+    transition: 0.5s;
 }
-.cont04 .list a .info {
+.cont04 .list a > div:hover img {
+    transform: scale(1.3);
+}
+.cont04 .list .info {
     background-color: #fff;
     color: #333;
     padding: 20px 10px;
 }
-.cont04 .list a .info h4 {
+.cont04 .list .info h4 {
     font-size: 20px;
     margin-bottom: 7px;
 }
-.cont04 .list a .info p {}
+.cont04 .list .info p {}
 
-/* .cont05 나의 소개 */
-.cont05 {
-    padding: 200px 0;
-}
-.cont05 .info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.cont05 .info .info_img {
-    width: 400px;
-    height: 400px;
-}
-.cont05 .info .info_img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.cont05 .info .text {
-    width: 1000px;
-    padding-left: 100px;
-}
-.cont05 .info .text ul {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.cont05 .info .text ul li {
-    line-height: 1.4;
-}
-.cont05 .info .text ul li strong {
-    display: inline-block;
-    width: 180px;
-}
-
-.cont05 .info .text .list {
-    margin-top: 50px;
-}
-.cont05 .info .text .list li {
-    height: 50px;
-    line-height: 50px;
-    padding: 0 30px;
-    background-color: #eee;
-    border-radius: 40px;
-    margin: 5px 10px;
-    font-size: 16px;
-}
-.cont05 .info .text .list li.v {
-    background-color: #000;
-    color: #fff;
-}
 
 /* footer */
 footer {
