@@ -555,16 +555,13 @@ header .inner .gnb ul li a{
     position: relative;
 }
 .cont04 .pol {
-    width: 30%;
-    height: 30%;
     position: absolute;
-    bottom: 120px;
-    right: 0;
-    z-index: 999;
+    top: 130px;
+    right: 250px;
+    z-index: -1;
 }
 .con04 .pol img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 .cont04 .list {
